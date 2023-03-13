@@ -5,6 +5,8 @@ const { Sails } = require("sails");
 const dotenv = require("dotenv").config();
 
 module.exports = {
+
+  // for signup user
   signup: async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -24,7 +26,7 @@ module.exports = {
       return res.json({ success: false, message: err.message });
     }
   },
-
+ // for login user
   login: async (req, res) => {
       try {
         const { email, password } = req.body;
@@ -49,7 +51,7 @@ module.exports = {
       res.status(500).json({ error: error });
     }
   },
-
+ // for logout user
   logout: async (req, res) => {
     try {
       console.log(req.userData);
