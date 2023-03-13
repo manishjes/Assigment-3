@@ -28,8 +28,9 @@ module.exports = {
   category: async (req, res) => {
     try {
       const { page, limit } = req.query;
-      const skip = (page - 1) * limit;
       const pagelimit = parseInt(limit);
+      const skip = (page - 1) * limit;
+      
       if (limit) {
         const category = await MenuCategory.find({ isDelete: false })
           .skip(skip)

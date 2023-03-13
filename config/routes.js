@@ -25,8 +25,9 @@ module.exports.routes = {
   'POST /logout': { action: 'Authcontroller/logout' },
   
 
-  'GET /getcategory':'MenuCategoryController.category',
+  
   'POST /addcategory':'MenuCategoryController.addcategory',
+  'GET /getcategory':'MenuCategoryController.category',
   'PATCH /updatecategory/:id':'MenuCategoryController.updatecategory',
   'DELETE /deletecategory/:id':'MenuCategoryController.deletecategory',
     
