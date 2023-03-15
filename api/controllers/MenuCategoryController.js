@@ -3,6 +3,7 @@ module.exports = {
   
   //add category
   addcategory: async (req, res) => {
+    const lang = req.getLocale();
     try {
       const { name } = req.body;
       const category = await MenuCategory.find({ name: name, isDelete: false });
@@ -14,7 +15,7 @@ module.exports = {
         const addcategory = await MenuCategory.create({ name: name }).fetch();
         if (addcategory) {
           console.log(addcategory);
-          res.status(200).json({ message: "success", category: addcategory });
+          res.status(200).json({  message: sails.__("category.addsuccess", { lang: lang }), category: addcategory });
         } else {
           res.status(404).json({ message: "category not found" });
         }
@@ -25,14 +26,17 @@ module.exports = {
   },  
 
   //pagination for category and items 
+  
   category: async (req, res) => {
     try {
       const { page, limit } = req.query;
       const pagelimit = parseInt(limit);
-      const skip = (page - 1) * limit;
-      
+      let skip = 0;
+      if (page && !isNaN(page)) {
+        skip = (parseInt(page) - 1) * pagelimit;
+      }
       if (limit) {
-        const category = await MenuCategory.find({ isDelete: false })
+        let category = await MenuCategory.find({ isDelete: false })
           .skip(skip)
           .limit(pagelimit)
           .populate(
@@ -43,17 +47,17 @@ module.exports = {
         category = {
           pageNumber: page,
           limit: category.length,
-          category: category.filter((category) => {
-            return {
-              id: category.id,
-              name: category.name,
-              totalitems: category.items.length,
-              items: category.items,
-            };
-          }),
+          category: category.map((category) => ({
+            id: category.id,
+            name: category.name,
+            totalitems: category.items.length,
+            items: category.items,
+          })),
         };
+        console.log(category);
         res.status(200).json({ category });
-      } else {
+      }
+      else {
         //filtering category
         const search =   req.query.search;
         console.log("search", search);
@@ -83,6 +87,8 @@ module.exports = {
           const categorysearch = await MenuCategory.find({
             isDelete: false,
             name: { contains: search },
+            
+            
           });
           console.log(categorysearch);
           res.status(200).json({ category: categorysearch });
@@ -93,11 +99,16 @@ module.exports = {
       res.status(500).json({ message: " Error" });
     }
   },
+ 
+  
+  
+  
 
 
   
   // update category name
   updatecategory: async (req, res) => {
+    const lang = req.getLocale();
     try {
       const id = req.params.id;
       const { name } = req.body;
@@ -112,7 +123,7 @@ module.exports = {
           updatedAt: new Date(),
         });
         if (updatedCategory) {
-          res.status(200).json({ message: "success", category: updatedCategory });
+          res.status(200).json({  message: sails.__("category.update", { lang: lang }), category: updatedCategory });
         } else {
           res.status(404).json({ message: "failed to update" });
         }
@@ -148,7 +159,7 @@ module.exports = {
         );
   
       if (category) {
-        const resp = {
+        const result = {
           count: category.length,
           category: category.map((category) => {
             return {
@@ -167,7 +178,7 @@ module.exports = {
             };
           }),
         };
-        res.status(200).json(resp);
+        res.status(200).json(result);
       }
       console.log(category);
     } catch (error) {

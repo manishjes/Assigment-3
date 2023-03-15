@@ -1,4 +1,11 @@
 {
-  "Welcome": "Welcome",
-  "A brand new app.": "A brand new app."
+	"Welcome": "Welcome",
+	"A brand new app.": "A brand new app.",
+	"item.exsits": "item name exsits",
+	"item.success": "item add successfully",
+	"item.total": "total items",
+	"item.update": "item update successfully",
+	"item.deleted": "item deleted successfully",
+	"category.addsuccess": "category added successfully",
+	"category.update": "category updated successfully"
 }
