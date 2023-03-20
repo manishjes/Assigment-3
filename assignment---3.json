@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "25de5d87-cf3d-4551-9f11-478021bf2238",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "add category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "streetfood",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/addcategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"addcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/getcategory?page=1&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"getcategory"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatecategory",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "street",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/updatecategory/6418490c93a2d4129e6234ae",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"updatecategory",
+								"6418490c93a2d4129e6234ae"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletecategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/deletecategory/6418490c93a2d4129e6234ae",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"deletecategory",
+								"6418490c93a2d4129e6234ae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get menu items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"menu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "items",
+			"item": [
+				{
+					"name": "add items",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "itemname",
+									"value": "ff",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "ff",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "50",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "6409a8d6d1b1d212c7c795f6",
+									"type": "default"
+								},
+								{
+									"key": "displayOrder",
+									"value": "963",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ztlab136/Desktop/test3/carinanebula3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/additems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"additems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update items",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "itemname",
+									"value": "pizzzzza",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "testy",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "89",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "6409a8d6d1b1d212c7c795f6",
+									"type": "default"
+								},
+								{
+									"key": "displayOrder",
+									"value": "669",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ztlab136/Desktop/test3/carinanebula3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/items/641854a22fc9431725061751",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"items",
+								"641854a22fc9431725061751"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/items/641854a22fc9431725061751",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"items",
+								"641854a22fc9431725061751"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "man@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "456",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "man@gmail.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "456",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTg1ODZmZmZjMjk1MTgxMzVkY2JhMSIsImVtYWlsIjoibWFuQGdtYWlsLmNvbSIsImlhdCI6MTY3OTMxNzk0NCwiZXhwIjoxNjc5MzIxNTQ0fQ._vPZyxIoCYRvfGEInmacECHJz8A7-0OFbv5EC7bQe9A",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "man@gmail.com",
+									"type": "default",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "456",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

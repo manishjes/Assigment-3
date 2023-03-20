@@ -20,6 +20,7 @@ module.exports = {
       }
 
       //check display order validation
+      
       if (itemorders.length != 0) {
         return res
           .status(404)
@@ -97,15 +98,14 @@ module.exports = {
         category: category,
       });
       const itemorders = await MenuItem.find({
-        displayOrder: displayOrder,
-        category: category,
+        displayOrder: displayOrder
       });
 
       // item name and category validation
       if (items.length != 0) {
         return res.status(404).json({ message: "item name already exists" });
       }
-
+// console.log(itemorders);
       // displayOrder and category validation
       if (itemorders.length != 0) {
         return res
