@@ -101,6 +101,14 @@
 								"header": []
 							},
 							"response": []
+						},
+						{
+							"name": "update category",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
 						}
 					]
 				},
@@ -305,7 +313,7 @@
 				{
 					"name": "user signup",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": []
 					},
 					"response": []
@@ -313,7 +321,15 @@
 				{
 					"name": "updateitems",
 					"request": {
-						"method": "GET",
+						"method": "PATCH",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "user login",
+					"request": {
+						"method": "POST",
 						"header": []
 					},
 					"response": []
