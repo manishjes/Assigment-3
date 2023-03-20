@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "d4b29058-c86f-412a-b441-3f1330bb7ead",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "New Folder",
+			"item": [
+				{
+					"name": "post",
+					"item": [
+						{
+							"name": "add category",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "jungfoods",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "nice",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "150",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "6409c78c4d422c19200caed5",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "displayOrder",
+											"value": "12",
+											"type": "default",
+											"disabled": true
+										},
+										{
+											"key": "image",
+											"value": "",
+											"type": "default",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:1337/addcategory",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1337",
+									"path": [
+										"addcategory"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get items",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "update item",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "delete item",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "menu items",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add items",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbmlzaEAyNC5jb20iLCJ1c2VySWQiOiI2M2ZmMjRlN2U0NzI5OTgxMzQ1NWMyYWMiLCJpYXQiOjE2Nzc2NjU2NjEsImV4cCI6MTY3NzY2OTI2MX0.TqxC9QyGKXJclnn1MStPJnhmmcDhZKGiDfpwJb5k8aA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "itemname",
+									"value": "meggi",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "testy",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "45",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "640ab6dc6bed3606bb14f479",
+									"type": "default"
+								},
+								{
+									"key": "displayOrder",
+									"value": "9",
+									"type": "default"
+								},
+								{
+									"key": "slug",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/additems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"additems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbmlzaEAyNC5jb20iLCJ1c2VySWQiOiI2M2ZmMjRlN2U0NzI5OTgxMzQ1NWMyYWMiLCJpYXQiOjE2Nzc2NjU2NjEsImV4cCI6MTY3NzY2OTI2MX0.TqxC9QyGKXJclnn1MStPJnhmmcDhZKGiDfpwJb5k8aA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "itemname",
+									"value": "meggi",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "testy",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "45",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "640ab6dc6bed3606bb14f479",
+									"type": "default"
+								},
+								{
+									"key": "displayOrder",
+									"value": "9",
+									"type": "default"
+								},
+								{
+									"key": "slug",
+									"value": "",
+									"type": "default",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/additems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"additems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get category",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete items",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get menuitems",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1hbmlzaEAyNC5jb20iLCJ1c2VySWQiOiI2M2ZmMjRlN2U0NzI5OTgxMzQ1NWMyYWMiLCJpYXQiOjE2Nzc2NjU2NjEsImV4cCI6MTY3NzY2OTI2MX0.TqxC9QyGKXJclnn1MStPJnhmmcDhZKGiDfpwJb5k8aA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "itemname",
+									"value": "bur",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "new",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "80",
+									"type": "default"
+								},
+								{
+									"key": "category",
+									"value": "6409a8d6d1b1d212c7c795f6",
+									"type": "default"
+								},
+								{
+									"key": "displayOrder",
+									"value": "3",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/ztlab136/Desktop/Screenshot 2023-03-09 at 3.37.34 PM.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:1337/additems",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"additems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user signup",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "updateitems",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -183,7 +183,7 @@ module.exports = {
       console.log(category);
     } catch (error) {
       console.error(error);
-      res.status(500).json({ error: " Error" });
+      res.status(500).json({ error: error });
     }
   },
 };

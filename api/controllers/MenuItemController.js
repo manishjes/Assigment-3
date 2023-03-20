@@ -114,7 +114,8 @@ module.exports = {
       }
 
       // update the item
-      const item = await MenuItem.updateOne({ id: id }).set({
+      const item = await MenuItem.updateOne({ id: id }).set(
+        {
         itemname: itemname,
         description: description,
         price: price,
@@ -122,7 +123,8 @@ module.exports = {
         image: image,
         displayOrder: displayOrder,
         updatedAt: new Date(),
-      });
+      }
+      );
 
       // return the updated item
       return res.status(200).json({ message: sails.__("item.update", { lang: lang }), item: item });
