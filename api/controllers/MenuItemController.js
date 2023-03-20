@@ -7,11 +7,11 @@ module.exports = {
 
       const items = await MenuItem.find({
         itemname: itemname,
-        category: category,
+        
       });
       const itemorders = await MenuItem.find({
         displayOrder: displayOrder,
-        category: category,
+        
       });
 
       //item name and category validation
@@ -95,7 +95,7 @@ module.exports = {
       const id = req.params.id;
       const items = await MenuItem.find({
         itemname: itemname,
-        category: category,
+        
       });
       const itemorders = await MenuItem.find({
         displayOrder: displayOrder
@@ -105,7 +105,7 @@ module.exports = {
       if (items.length != 0) {
         return res.status(404).json({ message: "item name already exists" });
       }
-// console.log(itemorders);
+
       // displayOrder and category validation
       if (itemorders.length != 0) {
         return res
