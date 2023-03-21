@@ -54,11 +54,11 @@ module.exports = {
             items: category.items,
           })),
         };
-        console.log(category);
+       
         res.status(200).json({ category });
       }
       else {
-        //filtering category
+        //searching all category and items
         const search =   req.query.search;
         console.log("search", search);
         if (!search) {
@@ -69,10 +69,10 @@ module.exports = {
               { sort: "displayOrder ASC" }
             );
           const allcategory = {
-            pageNumber: page,
+            
             limit: category.length,
             count: category.length,
-            category: category.filter((category) => {
+            category: category.map((category) => {
               return {
                 id: category.id,
                 name: category.name,
@@ -82,11 +82,13 @@ module.exports = {
             }),
           };
           res.status(200).json(allcategory);
-        } else {
-          //search function
+        } 
+        else {
+          //search category
           const categorysearch = await MenuCategory.find({
             isDelete: false,
             name: { contains: search },
+            
             
             
           });
@@ -99,6 +101,13 @@ module.exports = {
       res.status(500).json({ message: " Error" });
     }
   },
+    
+
+
+
+
+
+
  
   
   
