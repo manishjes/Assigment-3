@@ -65,8 +65,8 @@ module.exports = {
           const category = await MenuCategory.find({ isDelete: false })
             .populate(
               "items",
-              { where: { isDelete: false } },
-              { sort: "displayOrder ASC" }
+              { where: { isDelete: false } ,
+               sort: "displayOrder ASC" }
             );
           const allcategory = {
             
@@ -84,16 +84,34 @@ module.exports = {
           res.status(200).json(allcategory);
         } 
         else {
-          //search category
-          const categorysearch = await MenuCategory.find({
-            isDelete: false,
-            name: { contains: search },
+          
+
+          
+          const categorys = await MenuCategory.find({
+            where: {
+               isDelete: false,
+              name: { contains: search },
+          }
+        })
+            .populate(
+              "items",
+              { where: { isDelete: false } ,
+               sort: "displayOrder ASC" }
+            );
+          const searchcategory = {
             
-            
-            
-          });
-          console.log(categorysearch);
-          res.status(200).json({ category: categorysearch });
+            limit: categorys.length,
+            count: categorys.length,
+            category: categorys.map((categorys) => {
+              return {
+                id: categorys.id,
+                name: categorys.name,
+                totalitems: categorys.items.length,
+                items: categorys.items,
+              };
+            }),
+          };
+          res.status(200).json(searchcategory);
         }
       }
     } catch (err) {
@@ -103,18 +121,6 @@ module.exports = {
   },
     
 
-
-
-
-
-
- 
-  
-  
-  
-
-
-  
   // update category name
   updatecategory: async (req, res) => {
     const lang = req.getLocale();
