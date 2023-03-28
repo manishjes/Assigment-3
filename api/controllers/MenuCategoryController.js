@@ -41,8 +41,8 @@ module.exports = {
           .limit(pagelimit)
           .populate(
             "items",
-            { where: { isDelete: false } },
-            { sort: "displayOrder ASC" }
+            { where: { isDelete: false } ,
+             sort: "displayOrder ASC" }
           );
         category = {
           pageNumber: page,
@@ -161,11 +161,10 @@ module.exports = {
   menu: async (req, res) => {
     try {
       const category = await MenuCategory.find({ isDelete: false })
-        .populate(
-          "items",
-          { where: { isDelete: false } },
-          { sort: "displayOrder ASC" }
-        );
+      .populate(
+        "items",
+        { where: { isDelete: false }, sort: "displayOrder ASC" }
+  );
   
       if (category) {
         const result = {
