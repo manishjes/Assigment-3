@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const { Sails } = require("sails");
+//const { Roles } = sails.config.constant;
 
 const dotenv = require("dotenv").config();
 
@@ -8,7 +9,7 @@ module.exports = {
 
   // for signup user
   signup: async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, roles } = req.body;
     try {
       const user = await User.findOne({ email });
       if (user) {
@@ -16,7 +17,7 @@ module.exports = {
       }
 
       const hash = await bcrypt.hash(password, 10);
-      const newuser = await User.create({ email, password: hash }).fetch();
+      const newuser = await User.create({ email, password: hash, roles}).fetch();
 
       return res.json({
         success: true,
@@ -45,7 +46,7 @@ module.exports = {
 
       console.log("Token saved to user:", user.email);
 
-      res.status(200).json({ message: "Auth successful", token: token });
+      res.status(200).json({ message: "login successful", token: token });
     } catch (error) {
       console.log(error);
       res.status(500).json({ error: error });

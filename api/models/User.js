@@ -5,7 +5,7 @@
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
  */
 
-
+const { Roles } = sails.config.constant;
 
 module.exports = {
 
@@ -21,6 +21,13 @@ module.exports = {
     }
 
   },
+
+  roles:
+    {
+      type: 'string',
+      isIn: [Roles.Admin, Roles.User],
+      defaultsTo: Roles.User
+    },
   
 
 

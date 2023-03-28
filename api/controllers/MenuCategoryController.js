@@ -27,7 +27,7 @@ module.exports = {
 
   //pagination for category and items 
   
-  category: async (req, res) => {
+  getcategory: async (req, res) => {
     try {
       const { page, limit } = req.query;
       const pagelimit = parseInt(limit);
@@ -89,7 +89,7 @@ module.exports = {
           
           const categorys = await MenuCategory.find({
             where: {
-               isDelete: false,
+              // isDelete: false,
               name: { contains: search },
           }
         })

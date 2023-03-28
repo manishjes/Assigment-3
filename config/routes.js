@@ -29,7 +29,7 @@ module.exports.routes = {
 
   
   'POST /addcategory':'MenuCategoryController.addcategory',
-  'GET /getcategory':'MenuCategoryController.category',
+  'GET /getcategory':'MenuCategoryController.getcategory',
   'PATCH /updatecategory/:id':'MenuCategoryController.updatecategory',
   'DELETE /deletecategory/:id':'MenuCategoryController.deletecategory',
     
