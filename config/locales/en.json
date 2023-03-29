@@ -7,5 +7,6 @@
 	"item.update": "item update successfully",
 	"item.deleted": "item deleted successfully",
 	"category.addsuccess": "category added successfully",
-	"category.update": "category updated successfully"
+	"category.update": "category updated successfully",
+	"category.deleted": "category deleted successfully"
 }

@@ -9,7 +9,7 @@ module.exports = {
 
   // for signup user
   signup: async (req, res) => {
-    const { email, password, roles } = req.body;
+    const { email, password, role } = req.body;
     try {
       const user = await User.findOne({ email });
       if (user) {
@@ -17,7 +17,7 @@ module.exports = {
       }
 
       const hash = await bcrypt.hash(password, 10);
-      const newuser = await User.create({ email, password: hash, roles}).fetch();
+      const newuser = await User.create({ email, password: hash, role}).fetch();
 
       return res.json({
         success: true,

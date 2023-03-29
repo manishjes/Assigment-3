@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "25de5d87-cf3d-4551-9f11-478021bf2238",
-		"name": "New Collection",
+		"name": "api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

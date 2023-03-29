@@ -18,7 +18,7 @@ module.exports = async (req, res, next) => {
       return res.status(401).json({ message: "token not match" });
     }
 
-    if (userData.roles === "u") {
+    if (userData.role === "u") {
       return next();
     } else {
       return res.status(401).json({ message: "Auth failed" });

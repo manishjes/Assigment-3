@@ -98,38 +98,51 @@ module.exports = {
         
       });
       
-
+      
       // item name validation
       if (items.length != 0) {
         return res.status(404).json({ message: "item name already exists" });
       }
-
-      
-
-      // update the item
+      else{
+        // update the item
       const item = await MenuItem.updateOne({ id: id }).set(
         req.body);
-      
+        if(!item){
+          res.status(404).json({message: "item not found"})
 
-      // return the updated item
+        }else{
+          // return the updated item
       return res.status(200).json({ message: sails.__("item.update", { lang: lang }), item: item });
+
+        }
+    
+
+      }
+      
     } catch (error) {
       return res.status(500).json({ message: " error" });
+     
     }
+    
   },
   //delete items
   deleteitem: async (req, res) => {
     const lang = req.getLocale();
     try {
       const id = req.params.id;
-      const items = await MenuItem.update(id, {
+      const items = await MenuItem.updateOne(id, {
         isDelete: true,
         deletedAt: new Date(),
       });
-      res.status(200).json({ message: sails.__("item.deleted", { lang: lang }), items });
-    } catch (err) {
-      console.log(err);
-      res.status(404).json({ error: err.message });
-    }
-  },
+  if (!items) {
+    return res.status(404).json({ error: 'item not found' });
+  }
+  return res.status(200).json({
+    message: sails.__("item.deleted"),
+    category: items,
+  })
+} catch (err) {
+  return res.status(500).json({ error: err.message });
+}
+},
 };

@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
         token: token,
       });
     const userData = await User.findOne(decode.id);
-    if (userData.roles === "a") {
+    if (userData.role === "a") {
       return next();
     } else {
         return res.status(401).json({ message: "Auth failed" });;

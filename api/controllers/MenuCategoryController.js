@@ -1,4 +1,5 @@
 
+
 module.exports = {
   
   //add category
@@ -151,12 +152,20 @@ module.exports = {
   //delete category
 
       deletecategory: async (req, res) =>{
+        const lang = req.getLocale();
         try {
-          const deletedCategory = await MenuCategory.destroyOne(req.params.id);
+          const id = req.params.id;
+      const deletedCategory = await MenuCategory.updateOne(id, {
+        isDelete: true,
+        deletedAt: new Date(),
+      });
           if (!deletedCategory) {
             return res.status(404).json({ error: 'Category not found' });
           }
-          return res.json(deletedCategory);
+          return res.status(200).json({
+            message: sails.__("category.deleted"),
+            category: deletedCategory,
+          })
         } catch (err) {
           return res.status(500).json({ error: err.message });
         }

@@ -22,7 +22,7 @@ module.exports = {
 
   },
 
-  roles:
+  role:
     {
       type: 'string',
       isIn: [Roles.Admin, Roles.User],

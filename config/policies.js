@@ -20,18 +20,21 @@ module.exports.policies = {
     "logout": "isAuthenticated",
   
  },
-  // MenuCategoryController: {
-  //   'addcategory':  "isAdmin",
-  //   'getcategory': "isAuthenticated",
-  //   'updatecategory': "isAdmin",
-  //   "deletecategory": "isAdmin",
 
-  //    'menu': "isAuthenticated",
-  // },
+//   MenuCategoryController: {
+//     'addcategory':  "isAdmin",
+//     'getcategory': "isAuthenticated",
+//     'updatecategory': "isAdmin",
+//     "deletecategory": "isAdmin",
 
-  // MenuItemController:{
-  //   '*': "isAdmin",
-  // },
+//       'menu': "isAuthenticated",
+//    },
+
+
+
+//   MenuItemController:{
+//     '*': "isAdmin",
+//   },
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions, unless overridden.       *
