@@ -21,14 +21,14 @@ module.exports.policies = {
   
  },
 
-//   MenuCategoryController: {
-//     'addcategory':  "isAdmin",
-//     'getcategory': "isAuthenticated",
-//     'updatecategory': "isAdmin",
-//     "deletecategory": "isAdmin",
+  // MenuCategoryController: {
+  //   'addcategory':  "isAdmin",
+  //   'getcategory': "isAuthenticated",
+  //   'updatecategory': "isAdmin",
+  //   "deletecategory": "isAdmin",
 
-//       'menu': "isAuthenticated",
-//    },
+  //     'menu': "isAuthenticated",
+  //  },
 
 
 

@@ -18,16 +18,19 @@ module.exports = {
     password: {
       type: 'string',
       required: true
-    }
-
-  },
-
-  role:
+    },
+   
+    role:
     {
       type: 'string',
       isIn: [Roles.Admin, Roles.User],
       defaultsTo: Roles.User
-    },
+    }
+
+    
+
+  },
+
   
 
 

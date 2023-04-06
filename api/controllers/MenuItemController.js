@@ -7,10 +7,12 @@ module.exports = {
 
       const items = await MenuItem.find({
         itemname: itemname,
+        isDelete: false,
         
       });
       const itemorders = await MenuItem.find({
         displayOrder: displayOrder,
+        isDelete:false,
         
       });
 
@@ -96,7 +98,7 @@ module.exports = {
       const items = await MenuItem.find({
         itemname: itemname,
         
-      });
+      })
       
       
       // item name validation
